@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="vieaport" content="width=device-width, initial-scale=1">
+    <title>TwitchTV status APP</title>
+    <!-- get links for typeehead -->
+    <!-- http://jquery.com/ -->
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <!-- https://github.com/corejavascript/typeahead.js/blob/master/doc/jquery_typeahead.md -->
+    <script src="https://cdn.rawgit.com/corejavascript/typeahead.js/master/dist/typeahead.jquery.js"></script>
+    <!-- get jQuery UI-->
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/themes/smoothness/jquery-ui.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js"></script>
+    <!-- end links for typeahead -->
+    <!-- get font-awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+    <!-- get Handlebars -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.js"></script>
+    <!-- connect to css file -->
+    <link rel="stylesheet" href="css/twitchTVFlex.css">
+    <!-- connect to javascript file -->
+    <script src="js/twitchTV.js" async defer></script>
+    <!-- open links (<a>) in new tabs -->
+    <base target="_blank">
+</head>
+
+<body>
+    <div class="mainContainer">
+        <header class="main-flex-item">
+            <div id="title">
+                <h1>TwitchTV Streamers</h1>
+            </div>
+            <div id="searchForm">
+            <form action="" onsubmit="return false" name="search">
+                <label for="searchUser"></label>
+                <input class="typeahead form-control input-sm" id="searchUser" type="search" name="search" value="" placeholder="Search" autocomplete="off">
+            </form>
+            </div>
+        </header>
+        <div class="main-flex-item" id="result"></div>
+        <div class="main-flex-item">
+            <button id="all" class="myButton">All</button>
+            <button id="online" class="myButton">Online</button>
+            <button id="offline" class="myButton">Offline</button>
+        </div>
+        <div class="main-flex-item" id="content"></div>
+
+    </div>
+    <footer>Written and coded by OxiBo, 2018</footer>
+
+    <script id='usersTemplate' type="text/x-handlebars-template">
+        <div class="users">
+            <div><img src='{{icon}}' alt="logo">
+            </div>
+            <div>
+                <p><a href='{{urlStream}}'>{{name}}</a></p>
+            </div>
+            <div>
+                <p>{{status}}</p>
+            </div>
+        </div>
+    </script>
+</body>
+
+</html>
